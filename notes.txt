@@ -1,0 +1,274 @@
+var = variable
+    - Will be changed over all document
+    - are hoisted
+
+    function varUse(){
+        var x = 1;
+        if(true){
+            var x = 2;
+            console.log(x); //will print 2
+        }
+        console.log(x);
+    }
+
+let = block variable
+
+    - will be available only inside block where they are declared
+    - must be declared before use.
+    - cant be re-declared.
+    - are not hoisted
+        - console.log(x);
+          let x = 3;
+          this will throw reference Error.
+
+    function letUse(){
+        let x = 1;
+        if(true){
+            let x = 2;
+            console.log(x); //print 2
+        }
+        console.log(x) //print 1
+    }
+
+const = block constant
+
+***************************************************************
+
+JavaScript has 8 Datatypes
+1. String
+2. Number
+3. Bigint
+4. Boolean
+5. Undefined
+6. Null
+7. Symbol
+8. Object
+
+The Object Datatype
+The object data type can contain:
+
+1. An object
+2. An array
+3. A date
+
+***************************************************************
+
+- String Methods
+
+1] length()
+
+2] Extracting string parts
+    1] slice()
+        - str.slice(7, 10)
+        - str.slice(-12, -6)
+
+    2] substring()
+        - similar to slice() but -ve values are considered as 0.
+
+    3] substr()
+        -  similar to slice() but 2nd parameter is length of string to be extracted
+        - str.substr(4, 7)
+        - it will extract from 4th pos and go till 7 length.
+
+3] replace()
+    - str.replace("sahil", "Maddox");
+    - returns a new string
+
+4] toUpperCase() and toLowerCase()
+
+5] concat()
+
+6] trim()
+    - removes white spaces
+
+7] charAt()
+
+8] split()
+    - split(",")
+
+    - split(" ")
+        - it will split the string into array by space
+        - str = "A Man";
+          arr = {"A", "Man}
+
+    - split("|")
+
+9] Searching
+    1] indexOf() = first occurence and can take second parameter as starting point if there are mutliple occurences.
+
+    2] lastIndexOf()
+
+    3] search() = same as indexOf() but do not have second parameter.
+
+10] Matching
+    1] match()
+
+    2] matchAll()
+
+11] includes()
+    - return T or F
+
+12] startsWith() AND endsWith()
+
+***************************************************************
+
+* string templates
+
+let firstName = "John";
+let lastName = "Doe";
+
+let text = `Welcome ${firstName}, ${lastName}!`;
+
+***************************************************************
+
+* JavaScript Numbers are Always 64-bit Floating Point
+
+***************************************************************
+
+Sorting
+
+- sort() considers array as string and sorts them alphabetically
+
+- for numeric array we should do following
+
+    const arr = [100, 1, 2, 22, 13]
+    arr.sort(function(a, b){
+        return a - b;
+    })
+    
+    here if a-b is -ve then
+        - a is sorted before b
+        - else b is sorted before a 
+
+***************************************************************
+
+map() - iterates over the array.
+
+************************************************************************************************************************************************************************************************************************************************************
+
+Essential Set Methods
+Method	Description
+    new Set()	Creates a new Set
+    add()	Adds a new element to the Set
+    delete()	Removes an element from a Set
+    has()	Returns true if a value exists in the Set
+    forEach()	Invokes a callback for each element in the Set
+    values()	Returns an iterator with all the values in a Set
+    Property	Description
+    size	Returns the number of elements in a Set
+
+***************************************************************
+
+JavaScript variables can belong to the local or global scope.
+
+Global variables can be made local (private) with closures.
+
+***************************************************************
+
+closures
+
+- let cnt = 0;
+  
+  function add(){
+    let cnt = 0;
+    cnt += 1;
+  }
+
+  add();
+  add();
+  add();
+
+
+  with closures
+
+  const add = (function() => {
+    let cnt = 0;
+    return function(){
+        cnt += 1;
+        return cnt;
+    }
+  })();
+
+  A closure in JavaScript is a function that has access to variables in its outer scope even after the outer function has returned. It allows you to keep a reference to a variable from its containing scope even after the containing function has returned.
+
+function outerFunction(x) {
+  return function innerFunction(y) {
+    return x + y;
+  };
+}
+
+const add5 = outerFunction(5);
+console.log(add5(3)); // 8
+
+In the example, innerFunction has access to the variable x from its outer scope, even after outerFunction has returned. When we assign outerFunction(5) to add5, we create a closure that remembers the value of x as 5. When we later call add5(3), the closure is executed and returns 8.
+
+
+  ***************************************************************
+
+  promises - A Promise in JavaScript is an object representing the eventual completion or failure of an asynchronous operation. Promises provide a way to register callbacks to be notified when the asynchronous operation is completed or failed, without blocking the execution of the rest of the code.
+
+
+<p id="demo"></p>
+
+<script>
+
+function display(some){
+    document.getElementById("demo").innerHTML = some;
+}
+
+let myPromise(function(myResolve, myReject){
+    let x = 0;
+
+    if(x == 0){
+        myResolve("OK");
+    }else{
+        myReject("ERROR");
+    }
+});
+
+myPromise.then(
+    function(value){
+       display(value); 
+    },
+
+    function(error){
+        display(error)
+    }
+);
+
+</script>
+
+
+//With ASYN and AWAIT
+
+<script>
+
+function display(some){
+    document.getElementById("demo").innerHTML = some;
+}
+
+async function myPromise(){
+    let x = 0;
+
+    if(x == 0){
+        return "OK";
+    }else{
+        return "ERROR";
+    }
+});
+
+myPromise.then(
+    function(value){
+       display(value); 
+    },
+
+    function(error){
+        display(error)
+    }
+);
+
+</script>
+
+
+
+
