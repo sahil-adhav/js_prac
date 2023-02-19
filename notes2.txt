@@ -1,0 +1,70 @@
+# DOCTYPE
+it tells the browser that this is a HTML5 document and it should be read in such way. It is associated with DTD (document type definition)
+
+HTML => <!DOCTYPE html>
+
+# img tag
+    In this we have <map> and <area> tag using which we can make image portions clickable.
+    <img src="img.png" usemap="#mapImg">
+    <map name="#mapImg">
+        <area>
+    </map>
+
+# CSS selectors
+    1] Simple selectors
+    2] Pseudo Class selectors
+    3] Combinator Selectors
+    4] Pseudo-Element Selectors
+    5] Attribute Selectors
+
+# MARGINS
+    used to create space around elements
+    top right bottom left
+
+# PADDING
+    used to create space around an elements content.
+
+# div{
+    width
+    border
+    padding
+    margin
+}
+
+# POSITION
+
+    static
+        positioned according to normal flow of the page.
+
+    relative
+        positioned relative to its normal position.
+
+    fixed
+        positioned relative to the viewport. Fixed Position.
+
+    absolute
+        positioned relative to its nearest positioned ancestor.
+
+# Combinators
+    div p{
+
+    }
+
+    div > p{
+
+    }
+
+    div + p {
+
+    }
+
+    div
+
+# pseudo-Class
+    a:link{}
+
+    a:hover{}
+
+    #pseudo element
+        used to add special style to first line or letter
+

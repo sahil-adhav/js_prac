@@ -8,7 +8,7 @@ var = variable
             var x = 2;
             console.log(x); //will print 2
         }
-        console.log(x);
+        console.logs(x);
     }
 
 let = block variable
@@ -191,7 +191,7 @@ closures
 
   A closure in JavaScript is a function that has access to variables in its outer scope even after the outer function has returned. It allows you to keep a reference to a variable from its containing scope even after the containing function has returned.
 
-function outerFunction(x) {
+function outerFunction(x) { 
   return function innerFunction(y) {
     return x + y;
   };
@@ -239,7 +239,7 @@ myPromise.then(
 </script>
 
 
-//With ASYN and AWAIT
+//With ASYNC and AWAIT
 
 <script>
 
@@ -268,6 +268,76 @@ myPromise.then(
 );
 
 </script>
+
+
+
+ReactJS is a JavaScript library for building user interfaces. It was developed and is maintained by Facebook, and has become one of the most popular libraries for building dynamic and responsive web applications.
+
+There are several reasons why developers choose to use ReactJS:
+
+Reusable Components: React allows developers to create reusable UI components, making it easier to build and maintain large-scale applications. Components can be easily composed and reused throughout an application, improving code reuse and overall application performance.
+
+Virtual DOM: React uses a virtual DOM, which is a lightweight in-memory representation of the actual DOM. This allows React to update the UI more efficiently, as it only updates the parts of the UI that have changed, rather than re-rendering the entire page.
+
+One-way Data Binding: React follows a one-way data binding model, where data flows from the parent component to the child component. This makes it easier to understand and debug an application, as well as making it easier to manage and update state.
+
+Performance: React is known for its high performance, as it uses a virtual DOM and only updates the parts of the UI that have changed. This results in faster and smoother updates to the UI, even for large and complex applications.
+
+Popularity and Community: React is one of the most popular JavaScript libraries, with a large and active community of developers who contribute to the development and maintenance of the library. This results in a wealth of resources and support, making it easier for developers to learn and use React.
+
+In conclusion, ReactJS is a powerful and flexible tool for building modern web applications. Its reusable components, virtual DOM, one-way data binding, and performance make it a popular choice among developers, while its popularity and community support make it easier to learn and use.
+
+
+
+
+
+The main differences between functional components and class components are:
+
+Syntax: Functional components are simple functions, while class components are ES6 classes.
+
+State: Class components can manage state, while functional components cannot.
+
+Lifecycle Methods: Class components can use lifecycle methods, while functional components cannot.
+
+Performance: Functional components are generally faster than class components, as they don't have the overhead of using a class.
+
+In general, it is recommended to use functional components whenever possible, as they are simpler, faster, and easier to understand. However, when a component needs to manage state or use lifecycle methods, a class component is required.
+
+
+
+In React, a class component is a component that is defined as a JavaScript class, while a functional component is a component that is defined as a JavaScript function.
+
+Class components have access to a feature called state, which is an object that holds data that can change over time. Class components can manage this state by using methods like setState(), which updates the component's state and triggers a re-render of the component. This allows class components to dynamically update their UI based on changes in state.
+
+On the other hand, functional components do not have access to state, as they are just simple JavaScript functions. They receive props as input and return a React element. As a result, functional components cannot manage state themselves, and they rely on other parts of the application to pass data to them through props.
+
+That being said, with the advent of React Hooks, functional components can now manage state using hooks like useState and useReducer. This has made functional components more powerful and made it possible for them to perform many of the same functions as class components, including managing state.
+
+
+
+
+In React, lifecycle methods are special methods that are called at specific points during a component's lifecycle, such as when it is being created, updated, or destroyed. These methods allow developers to perform specific actions at specific times, such as fetching data, updating the component's state, or triggering side effects.
+
+There are three main phases in the lifecycle of a React component:
+
+Mounting: This phase begins when a component is added to the DOM for the first time, and it includes the following lifecycle methods:
+
+constructor(): This is the first method that is called when a component is created. It is typically used to initialize state and bind event handlers.
+componentWillMount(): This method is called just before a component is mounted to the DOM.
+render(): This method is called to render the component.
+componentDidMount(): This method is called immediately after a component is mounted to the DOM. It is often used to fetch data or perform any other setup that requires the component to be fully rendered.
+Updating: This phase occurs when a component's state or props change, and it includes the following lifecycle methods:
+
+componentWillReceiveProps(): This method is called when a component is about to receive new props.
+shouldComponentUpdate(): This method is called before the render method, and it allows a component to decide whether or not it should update.
+componentWillUpdate(): This method is called just before a component updates.
+render(): This method is called to render the updated component.
+componentDidUpdate(): This method is called immediately after a component updates.
+Unmounting: This phase occurs when a component is being removed from the DOM, and it includes the following lifecycle method:
+
+componentWillUnmount(): This method is called just before a component is unmounted and destroyed.
+Note: With the advent of React Hooks, some of the lifecycle methods are being replaced by hooks like useEffect, useState, and useContext, which offer a more straightforward and flexible way of handling component state and side effects.
+
 
 
 

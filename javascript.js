@@ -191,3 +191,13 @@ function outerFun(x){
 
 const add2 = outerFun(5);
 console.log(add2(2));
+
+
+const fruitDB = new mongoose.Schema({
+    name : {
+        type : String,
+        required : [true]
+    },
+    rating : Number,
+    review : String
+})
